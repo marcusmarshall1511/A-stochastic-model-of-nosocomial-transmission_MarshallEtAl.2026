@@ -43,7 +43,7 @@ run_cohorts <- function(n, gamma, rC, beta, zeta, eps) {
 ### PARAMETERS
 n    <- 100
 zeta <- 1/3
-widthheight <- 2 #resolution of heatmaps
+widthheight <- 50 #resolution of heatmaps
 
 Xpl      <- list()
 range_pl <- numeric(0)

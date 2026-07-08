@@ -132,7 +132,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
                                                 double term_etaP   = (eP > 0)  ? get_val(l_, eHQ, iHQ, eHG, iHG, eP-1, iP+1, n) * eta_P : 0.0;
                                                 
                                                 if (Theta > 0.0) {
-                                                    double value = (1.0 / Theta) * (term_gamma + term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP);
+                                                    value = (1.0 / Theta) * (term_gamma + term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP);
                                                     
                                                 }
                                             }
@@ -153,7 +153,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
                                                 double term_lambdaP  = (NP  - eP  - iP  > 0) ? get_val(l_, eHQ, iHQ, eHG, iHG, eP+1, iP, n-1) * lambda_P : 0.0;
                                                 
                                                 if (Theta > 0.0) {
-                                                    double value = (1.0 / Theta) * (term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP + term_lambdaHQ + term_lambdaHG + term_lambdaP);
+                                                    value = (1.0 / Theta) * (term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP + term_lambdaHQ + term_lambdaHG + term_lambdaP);
                                                     }
                                             }
                                         }

@@ -699,7 +699,7 @@ R_lab <- ggdraw(R) +
 print(R_lab)
 
 
-
+ggsave("Histograms_new.pdf",plot=R_lab,width=8*1.2,height=11*1.2,device="pdf", dpi=300)
 
 
 
