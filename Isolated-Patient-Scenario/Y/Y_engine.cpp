@@ -133,7 +133,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
                                                 
                                                 if (Theta > 0.0) {
                                                     double value = (1.0 / Theta) * (term_gamma + term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP);
-                                                    VALUE_STORE[key_x] = value;
+                                                    
                                                 }
                                             }
                                         } 
@@ -154,10 +154,11 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
                                                 
                                                 if (Theta > 0.0) {
                                                     double value = (1.0 / Theta) * (term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP + term_lambdaHQ + term_lambdaHG + term_lambdaP);
-                                                    VALUE_STORE[key_x] = value;
-                                                }
+                                                    }
                                             }
                                         }
+                                        
+                                        VALUE_STORE[key_x] = value;
                                         
                                         
                                     }
