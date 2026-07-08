@@ -180,7 +180,7 @@ for (int nmax = 0; nmax <= nmaxmax; nmax++) {
                                         double term_lambdaP = (NP - eP - iP > 0) ? get_val(l_, eHQ, iHQ, eHG, iHG, eP+1, iP, n-1) * lambda_P : 0.0;
                                         if (Theta > 0.0) {
                                           double value = (1.0 / Theta) * (term_gamma + term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP + term_lambdaHQ + term_lambdaHG);
-                                          VALUE_STORE[key_x] = value;
+                                          
                                         
                                         }
                                     } else if (n > 0) {
@@ -200,10 +200,11 @@ for (int nmax = 0; nmax <= nmaxmax; nmax++) {
                                         
                                         if (Theta > 0.0) {
                                             double value = (1.0 / Theta) * (term_deltaL + term_muE + term_muI + term_etaHQ + term_etaHG + term_etaP + term_lambdaHQ + term_lambdaHG+term_lambdaP);
-                                            VALUE_STORE[key_x] = value;
-                                        }
+                                            }
                                             }
                                         }
+                                        
+                                        VALUE_STORE[key_x] = value;
                                         
                                         
                             }
