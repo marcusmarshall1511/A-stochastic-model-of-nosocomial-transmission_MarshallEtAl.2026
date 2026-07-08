@@ -17,7 +17,7 @@ setwd(dirname(current_path ))
 
 # 1. Compile the C++ engine
 message("Compiling C++ simulation engine...")
-sourceCpp("sim_core.cpp")
+sourceCpp("Y_engine_truncated.cpp")
 message("Compilation successful. Starting simulations...")
 
 
