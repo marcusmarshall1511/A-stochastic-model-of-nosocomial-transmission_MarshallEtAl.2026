@@ -162,9 +162,12 @@ gillespie_outbreaks <- function(o){
     NHG = H[2], #Number of General-care HCWs
     NP = 12 #Number of General Patients
   )
-  
-  
+  ################################################################################
+
+
+    
   # For manual population setting uncomment following section
+  ################################################################################
   # pops <- data.frame(
   #   NHQ = 5, # Number of Isolation-care HCWs
   #   NHG = 5, #Number of General-care HCWs
@@ -246,6 +249,8 @@ trials <- 100000
 
 
 #The following is for the isolated patient case, where no other individuals are exposed/infectous
+
+
 # P(isolated patient in stage l when first HQ exposure occurs | outbreak occurs)
 {iso_patient_prob <- function(params){ 
  
