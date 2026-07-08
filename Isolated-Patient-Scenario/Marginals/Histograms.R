@@ -19,7 +19,7 @@ writeLines("", "logs/progress.txt")
 
 HQ <- function(nmax, gamma, rC, beta, zeta, eps){
 message("Compiling C++ simulation engine...")
-sourceCpp("YHQ_engine.cpp")
+sourceCpp("YHQ_engine_outbreak_conditioned.cpp")
 message("Compilation successful. Starting simulations...")
 
 dir.create("logs", showWarnings = FALSE)
@@ -29,16 +29,14 @@ if (!file.exists(progress_file)) {
 }
 # 2. Wrapper function to run all three cohorts
 run_cohorts <- function(n, gamma, rC, beta, zeta, eps) {
-  S <- fast_trial_cpp_HQ(2, gamma, rC, "S", beta, zeta, eps)
-  #M <- fast_trial_cpp_HQ(6, gamma, rC, "M", beta, zeta, eps)
-  N <- fast_trial_cpp_HQ(13, gamma, rC, "N", beta, zeta, eps)
-  S <- S[2:length(S)]/(1-S[1])
-  #M <- M[2:length(M)]/M[1]
-  N <- N[2:length(N)]/(1-N[1])
+  S <- fast_trial_cpp_HQ(n, gamma, rC, "S", beta, zeta, eps)
+  #M <- fast_trial_cpp_P(n, gamma, rC, "M", beta, zeta, eps)
+  N <- fast_trial_cpp_HQ(n, gamma, rC, "N", beta, zeta, eps)
+  
   df <- rbind(
-    data.frame(x = 1:(length(S)), y = S, category = "S"),
-    #data.frame(x = 1:(length(M)), y = M, category = "M"),
-    data.frame(x = 1:(length(N)), y = N, category = "N")
+    data.frame(x = 0:(length(S)-1), y = S, category = "S"),
+    #data.frame(x = 0:(length(M)-1), y = M, category = "M"),
+    data.frame(x = 0:(length(N)-1), y = N, category = "N")
   )
   return(df)
 }
