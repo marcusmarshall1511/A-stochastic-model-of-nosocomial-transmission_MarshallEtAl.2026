@@ -133,6 +133,7 @@ saveRDS(Xpl, "Xpl_list_careful.rds")
 message("All (careful) simulations complete!")
 
 
+# Now to calculate scenarios where HCWs are not careful (eps = 1)
 ###################################################
 
 for (rC in c(0.9, 0.5, 0)) {
