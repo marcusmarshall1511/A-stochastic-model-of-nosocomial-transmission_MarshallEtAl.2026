@@ -50,7 +50,7 @@ range_pl <- numeric(0)
 
 # Determine the number of cores to use based on Slurm allocation
 # If Slurm doesn't set it, default to 1 to be safe
-n_cores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", unset = 1))
+n_cores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK", unset = 1)) # Note that multiple cores will not run on windows via this method
 message(sprintf("Running on %d cores...", n_cores))
 
 # 3. The Main Grid Loop
@@ -669,4 +669,4 @@ R_lab <- ggdraw(R) +
   draw_label(expression(epsilon== 1),  x = 0.05,  y = 0.17, size = 14, fontface="bold",angle=90)+
   draw_label("Relative difference,",  x = 0.95,  y = 0.65, size = 17, fontface="plain",angle=-90)
 R_lab
-# ggsave("Reduction_new.pdf", plot=R_lab,width=8*0.9,height=11*0.9,device="pdf", dpi=300)
+ggsave("Reduction_new.pdf", plot=R_lab,width=8*0.9,height=11*0.9,device="pdf", dpi=300)
