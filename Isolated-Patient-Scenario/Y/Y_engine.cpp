@@ -89,7 +89,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
                                 for (int eP = 0; eP <= ePmax; eP++) {
                                     int iPmax = std::min(iP_init + ePmax - eP, NP - eP);
                                     
-                                    for (int iP = iPmax; iP >= 0; iP--) {
+                                    for (int iP = 0; iP <= iPmax; iP++) {
                                         
                                         int eHQ = q - iHQ;
                                         int eHG = h - q - iHG;
