@@ -179,7 +179,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
         mean_ += nmax * p;
         p_set.push_back(p);
         
-        if (P_val > 0.9999) break;
+        // if (P_val > 0.9999) break;
     }
     
     return p_set;
