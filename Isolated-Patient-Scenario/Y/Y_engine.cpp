@@ -25,8 +25,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
     
     // Rates and Parameters
     double deltaP = 1.0 / 6.0;
-    std::vector<double> Hyp = {0.0, 6.69470955813761, 0.555473683554152,
-                                0.55547824700609, 0.555478430962926};
+    std::vector<double> Hyp = {0.0, 6.69470955813761, 0.555473683554152, 0.55547824700609, 0.555478430962926};
     double rI = 0.95;
     
     std::vector<double> Beta_O(5, 0.0);
@@ -180,7 +179,7 @@ NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort
         mean_ += nmax * p;
         p_set.push_back(p);
         
-        if (P_val > 0.999) break;
+        if (P_val > 0.9999) break;
     }
     
     return p_set;
