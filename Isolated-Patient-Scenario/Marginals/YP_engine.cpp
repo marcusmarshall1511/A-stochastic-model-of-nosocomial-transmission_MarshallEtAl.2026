@@ -229,18 +229,10 @@ std::string init_key = state_key(l_init, eHQ_init, iHQ_init,
             P_val += pv / (1.0 - p_set[0]);
         }
         // mean_ += nmax * pv;
-        //p_set.push_back(pv);
-        double weighted_n_sum = 0.0;
-        for (int l = 1; l <= K; l++) {
-            std::string k = state_key(l, 1, 0, 0, 0, 0, 0, nmax);
-            auto it = VALUE_STORE.find(k);
-            if (it != VALUE_STORE.end()) {
-                weighted_n_sum += outbreak_weights[l] * it->second;
-            }
-        }  // end for l
-        p_set.push_back(weighted_n_sum);
+        p_set.push_back(pv);
 
-    } // end nmax
+
+    } 
     return p_set;
 }   
 

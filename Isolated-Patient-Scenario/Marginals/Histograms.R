@@ -56,7 +56,7 @@ return(df)
 
 HG <- function(nmax, gamma, rC, beta, zeta, eps){
   message("Compiling C++ simulation engine...")
-  sourceCpp("YHG_engine.cpp")
+  sourceCpp("YHG_engine_outbreak_conditioned.cpp")
   message("Compilation successful. Starting simulations...")
   
   dir.create("logs", showWarnings = FALSE)
@@ -87,7 +87,7 @@ HG <- function(nmax, gamma, rC, beta, zeta, eps){
 
 P <- function(nmax, gamma, rC, beta, zeta, eps){
   message("Compiling C++ simulation engine...")
-  sourceCpp("YP_engine.cpp")
+  sourceCpp("YP_engine_outbreak_conditioned.cpp")
   message("Compilation successful. Starting simulations...")
   
   dir.create("logs", showWarnings = FALSE)
