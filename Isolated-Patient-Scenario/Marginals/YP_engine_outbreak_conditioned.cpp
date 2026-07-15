@@ -68,13 +68,13 @@ NumericVector fast_trial_cpp_P(int nmaxmax, double gamma, double rC,
     double total_po_sum = 0.0;
     for (int l = 1; l <= K; l++) {
     double prod = 1.0;
-    // Probability of NO exposure in stages higher than l
+    // Probability of no exposure in stages higher than l
     for (int q = l + 1; q <= K; q++) {
         double rate_HQ = NHQ * Beta_O[q];
         prod *= Hyp[q] / (Hyp[q] + rate_HQ);
     }
 
-    // Probability of exposure happening IN stage l
+    // Probability of exposure happening in stage l
     double rate_HQ_l = NHQ * Beta_O[l];
     prod *= rate_HQ_l / (rate_HQ_l + Hyp[l]);
     
