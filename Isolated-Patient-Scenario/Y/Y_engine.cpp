@@ -17,7 +17,7 @@ inline std::string state_key(int l, int eHQ, int iHQ, int eHG, int iHG, int eP, 
 // [[Rcpp::export]]
 NumericVector fast_trial_cpp(int nmaxmax, double gamma, double rC, String cohort, double beta, double zeta, double eps) {
     
-    // --- Setup Variables ---
+    // Setup Variables
     int NHQ = 0, NHG = 0, NP = 12;
     if (cohort == "S") { NHQ = 2; NHG = 11; }
     else if (cohort == "M") { NHQ = 6; NHG = 7; }
