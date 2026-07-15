@@ -119,7 +119,7 @@ NumericVector fast_trial_cpp_HG(int nmaxmax, double gamma, double rC,
         return (it != VALUE_STORE.end()) ? it->second : 0.0;
     };
 
-    //  Output accumulators 
+    //  Outputs
     NumericVector p_set;
     double P_val  = 0.0;
     // double mean_  = 0.0; 
@@ -131,7 +131,7 @@ NumericVector fast_trial_cpp_HG(int nmaxmax, double gamma, double rC,
     //       for l_ in 0:l_init
     //         g  = g_init + nmax - n   [single value for each nmax,n]
 
-    //    --CONSTRUCT MATRIX AND BOUNDARY VECTOR--
+    //    CONSTRUCT MATRIX AND BOUNDARY VECTOR
 
     //           for iHG in iHG_init:g        [i.e. iHG from 0 up to g]
     //             for q in NHQ:q_init       [NHQ to q_init]
